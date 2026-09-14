@@ -1,0 +1,249 @@
+
+:root {
+  --blue: #0b4f9f;
+  --blue-dark: #083d7b;
+  --blue-light: #eaf3ff;
+  --gold: #f4ad1d;
+  --text: #153a67;
+  --muted: #6e7f94;
+  --white: #ffffff;
+  --shadow: 0 18px 50px rgba(14, 53, 95, 0.16);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(31, 110, 198, 0.18), transparent 38%),
+    #f4f8fc;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  min-height: 225px;
+  padding: 24px 20px 74px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.07), transparent 45%),
+    linear-gradient(135deg, var(--blue-dark), #0d65be);
+  border-radius: 0 0 48% 48% / 0 0 18% 18%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  color: white;
+}
+
+.brand > div {
+  text-align: right;
+  line-height: 1.1;
+}
+
+.brand strong {
+  display: block;
+  font-size: 1.65rem;
+}
+
+.brand span {
+  display: block;
+  margin-top: 3px;
+  font-size: 1rem;
+}
+
+.brand img {
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.photo-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: -78px;
+  transform: translateX(-50%);
+  width: 164px;
+  height: 164px;
+  padding: 5px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 14px 32px rgba(0, 48, 100, 0.25);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 92px 18px 30px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 11vw, 3.3rem);
+  line-height: 1;
+  color: var(--blue);
+  letter-spacing: -0.04em;
+}
+
+.role {
+  margin: 10px 0 16px;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--blue-dark);
+}
+
+.club {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.btn {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border-radius: 16px;
+  background: var(--blue);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(10, 79, 159, 0.14);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.btn:active { transform: scale(.985); }
+
+.btn.primary {
+  width: 100%;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--blue-dark), #0d6bc8);
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.whatsapp { background: #14a84a; }
+
+.instagram {
+  background: linear-gradient(135deg, #7d3ac1, #e83e75, #f4a326);
+}
+
+.outline {
+  margin-top: 10px;
+  background: white;
+  color: var(--blue);
+  border: 2px solid #0d69c8;
+  box-shadow: none;
+}
+
+.icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.details {
+  margin-top: 24px;
+  border-top: 1px solid #d9e4f0;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 16px 2px;
+  border-bottom: 1px solid #e5edf6;
+}
+
+.detail > span {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue-light);
+}
+
+.detail small {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.detail strong {
+  font-size: 1rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+footer {
+  padding-top: 24px;
+  text-align: center;
+  color: var(--blue);
+}
+
+footer::before {
+  content: "";
+  display: block;
+  width: 58px;
+  height: 4px;
+  margin: 0 auto 12px;
+  border-radius: 99px;
+  background: var(--gold);
+}
+
+footer p {
+  margin: 0;
+  font-weight: 700;
+}
+
+@media (min-width: 560px) {
+  body { padding: 26px 0; }
+
+  .card {
+    width: min(100% - 32px, 460px);
+    min-height: auto;
+    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+  }
+
+  .hero {
+    border-radius: 30px 30px 48% 48% / 30px 30px 18% 18%;
+  }
+}
